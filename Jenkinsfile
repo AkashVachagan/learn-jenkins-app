@@ -42,6 +42,7 @@ pipeline {
                     image 'node:18-alpine'
                     reuseNode true
                 }
+            }
                 steps{
                     sh '''
                         npm install -g netlify-cli
@@ -51,7 +52,7 @@ pipeline {
             }
         }
     }
-    
+
     post{
         always{
             junit 'test-results/junit.xml'
